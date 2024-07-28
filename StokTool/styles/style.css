@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+}
+div#corpo{   
+    background-color: linear-gradient(bottom, hsl(0, 0%, 100%), hsl(228, 65%, 72%));
+}
+div#corpo > a{
+    align-items: center;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
+    height: 100%;
+    padding: 40px 10px 30px 10px;
+    border-right: 1px solid #2f3336;
+    transition: all 0.35s;
+    
+}
+.sidebar-header{
+    width: 100%;
+    margin-bottom: 16px;
+
+}
+.sidebar button{
+    /* height: 60px; */
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    
+    
+}
+.sidebar button > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0 16px 0 12px;
+    border-radius: 24px;
+    line-height: 1;
+    transition: all 0.04s;
+}
+
+.sidebar button:hover > span{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 10vw;
+}
+.sidebar button i{
+    position: relative;
+    font-size: 20px;
+    transition: 0.25;
+}
+.sidebar > nav{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.main{
+    margin-left: 250px;
+    margin-right: 6px;
+    overflow: hidden;
+}
+/* ajustando sidebar com apenas os icoes */
+@media (width < 920px){
+    .sidebar{
+        width: 72px;
+    }
+    .sidebar button > span{
+        width: 50px;
+    }
+    .sidebar button > span > span{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .main{
+        transition: margin 0.4s;
+        margin-left: 78px;
+    }
+}
+.button-mobile{
+    display: none;
+    align-self: flex-start;
+    align-items: center;
+    margin: 16px;
+    background: transparent;
+    color: #2f3336;
+    border: 0;
+}
+.button-close span i{
+    font-size: 50px;
+}
+.button-mobile span{
+    font-size: 24px;
+    margin-left: 8px;
+}
+.menu-mobile-active{
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.menu-mobile-active button{
+    background: transparent;
+    border: 0;
+    color: inherit;
+    margin-bottom: 16px;
+}
+.menu-mobile-active button > span{
+    display: inline-flex;
+    align-items: center;
+}
+.mobile-text{
+    font-size: 22px;
+    margin-left: 8px;
+
+}
+.menu-mobile{
+    display: none;
+}
+@media (max-width: 480px){
+    .sidebar{
+        display: none;
+    }
+    .button-mobile{
+        display: flex;
+    }
+    .main{
+        margin-left: 6px;
+    }
+}
